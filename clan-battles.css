@@ -1,0 +1,45 @@
+body {
+    font-family: 'Fredoka', sans-serif;
+    background-color: #f8fafc;
+    background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+    font-weight: 400;
+}
+
+.featured-image-container {
+    border-radius: 32px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.battle-card {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Subtle shadow */
+}
+
+.battle-card:hover {
+    transform: translateY(-10px) scale(1.02) skewX(-0.5deg); /* Sigma hover */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); /* More pronounced shadow */
+}
+
+.meta-pill {
+    padding: 6px 14px;
+    border-radius: 10px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 400;
+}
+
+.winner-text {
+    color: #10b981;
+    font-size: 13px;
+}
+
+.featured-image-container {
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}

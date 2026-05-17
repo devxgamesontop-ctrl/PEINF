@@ -1,0 +1,131 @@
+body {
+    font-family: 'Fredoka', sans-serif;
+    background-color: #ffffff;
+    background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+    font-weight: 400;
+}
+
+.pet-card {
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important; /* Lighter border */
+    position: relative;
+    overflow: hidden; /* Keep overflow hidden for image scale */
+    border-radius: 24px;
+}
+
+.pet-card:hover .absolute.bottom-0 {
+    transform: translateY(0);
+}
+
+/* Solid Sticky Nav */
+.glass-nav {
+    background-color: transparent !important; /* Allow animations.js to handle transparency */
+}
+
+.modal-open { opacity: 1 !important; }
+.modal-scale { transform: scale(1) !important; }
+
+/* Removed Rarity specific border colors to keep the Orange outline consistent */
+
+.value-text {
+    color: #4f46e5;
+    font-weight: 400;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+    border: 2px solid #f1f5f9;
+}
+
+/* Fixed trend class names to match JS data */
+.trend-rising { color: #10b981; }
+.trend-falling { color: #ef4444; }
+.trend-stable { color: #64748b; }
+
+.hot-badge {
+    background-color: #ef4444;
+    color: white;
+    font-size: 8px;
+    padding: 2px 6px;
+    border-radius: 6px;
+    font-weight: 400;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.animate-card {
+    animation: fadeInUp 0.4s ease-out forwards;
+}
+
+.demand-bg {
+    background-color: #f1f5f9;
+    height: 0.5rem;
+    width: 100%;
+    border-radius: 9999px;
+    overflow: hidden;
+    margin-top: 0.5rem;
+}
+
+.demand-fill {
+    height: 100%;
+    background-color: #6366f1;
+    border-radius: 9999px;
+    transition: width 0.5s ease-in-out;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+/* Modal Scroll Frame */
+.modal-scroll-frame {
+    max-height: 75vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 2rem;
+    padding-right: 2.5rem;
+}
+
+/* Ensure Toast is visible over Modals */
+#toast {
+    z-index: 10001 !important;
+}
+
+/* --- New Features Styles --- */
+.inventory-badge {
+    background: #6366f1;
+    color: white;
+    font-size: 9px;
+    padding: 2px 8px;
+    border-radius: 99px;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 10;
+}
+
+/* Chrome, Safari, Edge, Opera - Remove arrows from number input */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+svg text {
+    user-select: none;
+    pointer-events: none;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 400;
+}

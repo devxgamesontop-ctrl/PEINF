@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs | Official Trading Database</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="blogs.css">
+</head>
+<body class="text-slate-900 antialiased">
+    <header></header>
+
+    <main class="max-w-[1200px] mx-auto px-4 py-8 text-slate-900">
+        <div class="reveal text-center mb-16">
+            <h1 class="text-6xl font-normal text-slate-900 mb-6 tracking-tighter leading-none">Blogs</h1>
+        </div>
+
+        <div id="featuredSection" class="mb-12">
+            <!-- Featured post injected here -->
+        </div>
+            
+        <div id="blogGrid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Dynamic Content Injected via JS -->
+        </div>
+    </main>
+
+    <!-- Blog Detail Modal -->
+    <div id="blogModal" class="fixed inset-0 z-[100] invisible opacity-0 flex items-center justify-center p-4 bg-slate-950/80 transition-all duration-300 pointer-events-none">
+        <div class="bg-white rounded-[2.5rem] max-w-4xl w-full h-[90vh] overflow-hidden transform transition-transform duration-300 flex flex-col">
+            <div class="p-6 border-b border-slate-100 flex justify-between items-center">
+                <span id="modalCategory" class="text-indigo-600 dark:text-indigo-400 text-[11px] font-normal uppercase tracking-[0.2em]">Category</span>
+                <div class="flex items-center gap-6">
+                    <span id="modalDate" class="text-slate-400 text-[10px] uppercase font-normal">Date</span>
+                    <button onclick="closeBlog()" class="text-slate-400 hover:text-slate-600 transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </button>
+                </div>
+            </div>
+            <div id="blogContent" class="p-8 overflow-y-auto flex-grow">
+                <!-- Article content injected via JS -->
+            </div>
+        </div>
+    </div>
+
+    <footer></footer>
+
+    <script src="animations.js"></script>
+    <script src="components.js"></script>
+    <script src="blogs.js"></script>
+</body>
+</html>

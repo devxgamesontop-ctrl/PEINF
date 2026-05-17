@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Pulse | Official Trading Database</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="market-pulse.css">
+</head>
+<body class="text-slate-900 antialiased">
+    <header></header>
+
+    <main class="max-w-[1200px] mx-auto px-4 py-12">
+        <div class="reveal text-center mb-16">
+            <h1 class="text-6xl font-normal text-slate-900 mb-6 tracking-tighter leading-none">Market Pulse</h1>
+        </div>
+
+        <div id="pulseFeed" class="space-y-6">
+            <!-- Ticker items injected via JS -->
+        </div>
+    </main>
+
+    <footer></footer>
+
+    <div id="petModal" class="fixed inset-0 z-[100] invisible opacity-0 flex items-center justify-center p-4 bg-slate-950/80 transition-all duration-300 pointer-events-none">
+        <div class="bg-white rounded-[2.5rem] max-w-2xl w-full overflow-hidden transform transition-all duration-300">
+             <div id="modalContent">
+                <!-- Content injected via JS -->
+            </div>
+            <div class="p-4 bg-slate-50 border-t border-slate-100 flex justify-end">
+                <button onclick="closeModal()" class="px-6 py-2 bg-slate-900 text-white rounded-xl text-sm font-normal hover:bg-slate-800 transition-colors" style="font-weight: 400;">Close View</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="animations.js"></script>
+    <script src="components.js"></script>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+    <script src="market-pulse.js"></script>
+</body>
+</html>
