@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - INFINITY</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="text-slate-900 antialiased dark:bg-slate-950">
+    <header></header>
+
+    <main class="max-w-[800px] mx-auto px-4 pt-20 pb-12">
+        <div class="reveal text-center mb-16">
+            <h1 class="text-6xl font-normal text-slate-900 dark:text-white mb-6 tracking-tighter leading-none">Settings</h1>
+            <p class="text-slate-500 dark:text-slate-400 text-xl font-normal opacity-80">Manage your preferences.</p>
+        </div>
+
+        <div class="reveal bg-white dark:bg-slate-900 border border-slate-100 dark:border-white/10 rounded-[3rem] p-10 shadow-sm">
+            <div class="space-y-12">
+                <!-- Music Settings -->
+                <div class="flex flex-col gap-6">
+                    <div class="flex justify-between items-end">
+                        <div>
+                            <h3 class="text-2xl font-normal text-slate-900 dark:text-white mb-1 tracking-tight">Background Music</h3>
+                            <p class="text-slate-500 dark:text-slate-400 text-sm font-normal">Control the volume of the ambient tracks.</p>
+                        </div>
+                        <span id="volumeValue" class="text-2xl font-normal text-indigo-600 dark:text-indigo-400 tracking-tighter">25%</span>
+                    </div>
+                    
+                    <input type="range" id="volumeSlider" min="0" max="100" value="25" 
+                        class="w-full h-2 bg-slate-100 dark:bg-white/5 rounded-full appearance-none cursor-pointer accent-indigo-600 transition-all"
+                        oninput="updateVolume(this.value)">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer></footer>
+
+    <script src="animations.js"></script>
+    <script src="utils.js"></script>
+    <script src="components.js"></script>
+    <script>
+        function updateVolume(val) {
+            document.getElementById('volumeValue').textContent = val + '%';
+            localStorage.setItem('peinf-music-volume', val);
+            // Sync muted state logic
+            localStorage.setItem('peinf-music-muted', val == 0 ? 'true' : 'false');
+            // Dispatch event so a global audio player can respond immediately
+            window.dispatchEvent(new CustomEvent('volumeChange', { detail: val }));
+        }
+
+        window.addEventListener('load', () => {
+            const savedVolume = localStorage.getItem('peinf-music-volume') || 25;
+            const slider = document.getElementById('volumeSlider');
+            slider.value = savedVolume;
+            document.getElementById('volumeValue').textContent = savedVolume + '%';
+        });
+    </script>
+</body>
+</html>
